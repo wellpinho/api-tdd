@@ -5,5 +5,8 @@
   "repository": "git@github.com:wellpinho/api-tdd.git",
   "author": "wellpinho <wellpinho@outlook.com>",
   "license": "MIT",
-  "devDependencies": {}
+  "test": "jest",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
 }
