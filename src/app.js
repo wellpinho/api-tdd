@@ -1,5 +1,5 @@
 const express = require("express");
-const { userRoutes } = require("./routes");
+const { routes } = require("./routes");
 
 const app = express();
 
@@ -9,6 +9,6 @@ app.get("/", (req, res) => {
   return res.status(200).json("OK");
 });
 
-app.use("/users", userRoutes);
+app.use(routes);
 
 module.exports = { app };
