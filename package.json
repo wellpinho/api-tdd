@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nodemon ./src/server.js",
     "test": "jest",
-    "secure-test": "jest --watch --verbose=true"
+    "secure-test": "jest --watch"
   },
   "devDependencies": {
     "jest": "^28.1.3",
