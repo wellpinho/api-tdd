@@ -18,4 +18,9 @@ app.get("/users", (req, res) => {
   return res.status(200).json(users);
 });
 
+app.post("/users", (req, res) => {
+  const user = req.body;
+  return res.status(201).json(user);
+});
+
 module.exports = { app };
