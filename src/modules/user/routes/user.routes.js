@@ -2,8 +2,10 @@ const { Router } = require("express");
 const { errors } = require("celebrate");
 
 const { JoiCreateUser } = require("./../../../middlewares/usersJoi");
+const { UserController } = require("../controllers/UserController");
 
 const userRoutes = Router();
+const userController = new UserController();
 
 userRoutes.get("/", (req, res) => {
   const users = [
@@ -16,10 +18,7 @@ userRoutes.get("/", (req, res) => {
   return res.status(200).json(users);
 });
 
-userRoutes.post("/", JoiCreateUser, (req, res) => {
-  const user = req.body;
-  return res.status(201).json(user);
-});
+userRoutes.post("/", JoiCreateUser, userController.create);
 
 userRoutes.use(errors());
 

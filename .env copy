@@ -6,4 +6,4 @@
 
 # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
-DATABASE_URL="mongodb://mongodb:mongodb:localhost:27017/money
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"

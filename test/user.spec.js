@@ -24,9 +24,13 @@ describe("## Users", () => {
       .send(user)
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
-      .then((res) => {
-        expect(res.status).toBe(201);
-        expect(res.body).toHaveProperty("name", "Mary");
+      .then((err, res) => {
+        if (err) {
+          expect(err.status).toBe(401);
+        } else {
+          expect(res.status).toBe(201);
+          expect(res.body).toHaveProperty("name", "Mary");
+        }
       });
   });
 });
