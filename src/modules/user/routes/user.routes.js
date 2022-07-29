@@ -1,7 +1,10 @@
 const { Router } = require("express");
 const { errors } = require("celebrate");
 
-const { JoiCreateUser } = require("./../../../middlewares/usersJoi");
+const {
+  JoiCreateUser,
+  JoiUpdateUser,
+} = require("./../../../middlewares/usersJoi");
 const { UserController } = require("../controllers/UserController");
 
 const userRoutes = Router();
@@ -19,6 +22,7 @@ userRoutes.get("/", (req, res) => {
 });
 
 userRoutes.post("/", JoiCreateUser, userController.create);
+userRoutes.put("/:id", JoiUpdateUser, userController.update);
 
 userRoutes.use(errors());
 
